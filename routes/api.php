@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PedidoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+	return $request->user();
 });
+
+Route::get('/cliente', [ClienteController::class, 'index']);
+Route::get('/cliente/{id}', [ClienteController::class, 'show']);
+Route::post('/cliente/criarCliente', [ClienteController::class, 'store']);
+
+Route::get('/pedido', [PedidoController::class, 'index']);
+Route::get('/pedido/{id}', [PedidoController::class, 'show']);
+Route::post('/pedido/criarPedido', [PedidoController::class, 'store']);
