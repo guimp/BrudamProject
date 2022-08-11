@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ValidarCliente;
 use App\Models\Cliente;
 
 class ClienteController extends Controller
@@ -26,7 +26,7 @@ class ClienteController extends Controller
 		}
 	}
 
-	public function store(Request $request)
+	public function store(ValidarCliente $request)
 	{
 		$cliente = new Cliente;
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidarPedido;
 use App\Models\Pedido;
 
 class PedidoController extends Controller
@@ -26,7 +27,7 @@ class PedidoController extends Controller
 		}
 	}
 
-	public function store(Request $request)
+	public function store(ValidarPedido $request)
 	{
 		$pedido = new Pedido;
 
