@@ -17,7 +17,7 @@ return new class extends Migration
 		{
 			$table->id('idCliente');
 			$table->string('nome');
-			$table->integer('telefone');
+			$table->string('telefone');
 			$table->string('email');
 		});
 	}
